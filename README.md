@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Hackathon!
  
 ###This is where amazing Hackathon stuff goes.
@@ -32,3 +33,8 @@
 5. Click "start editing"
  
  Congrats, you're now editing your fork of the hackathon repo. There's a console at the bottom of the editor for just waiting for your git commands.
+=======
+ This is where amazing Hackathon stuff goes.
+ 
+ This is Matt testing.
+>>>>>>> 6c97b59f92ca610a64e082f04aaf0040152e5adc
