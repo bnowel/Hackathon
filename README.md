@@ -10,6 +10,7 @@ Attendees for upcoming meeting:
 1. ppershey
 1. ajbrann
 1. csmeder
+1. pandakiller
 
 ------------------------------
 ##Cloud 9 IDE
