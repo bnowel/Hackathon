@@ -1,7 +1,16 @@
 #Hackathon!
  
 ###This is where amazing Hackathon stuff goes.
- 
+Attendees for upcoming meeting:
+
+1. bnowel
+1. clintcparker
+1. matt-holden
+1. hexate
+1. ppershey
+1. ajbrann
+1. csmeder
+
 ------------------------------
 ##Cloud 9 IDE
  
