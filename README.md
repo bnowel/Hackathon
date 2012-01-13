@@ -12,6 +12,8 @@ Attendees for upcoming meeting:
 1. csmeder
 1. pandakiller
 1. NorthW1ND
+1. mbodik
+1. melissag
 
 ------------------------------
 ##Cloud 9 IDE
