@@ -19,7 +19,7 @@
         width = $this.width(),
         // If we approach from the left move right otherwise move right
         // There is a bit of fudge factor for positions between mouse x,y and offset left
-        adjustX = ev.pageX > pos.left + width / 2 ? -width : width;
+        adjustX = ev.pageX > pos.left + width / 2 ? -width : width,
         height = $this.height(),
         // Move like the x but for top
         adjustY = ev.pageY > pos.top + height / 2 ? -height : height;
