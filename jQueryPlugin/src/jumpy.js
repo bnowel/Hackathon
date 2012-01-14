@@ -7,33 +7,28 @@
 
     // Create some defaults, extending them with any options that were provided
     var settings = $.extend( {
-      'location'         : 'top',
-      'bad' : 'blue'
+        // Maybe make it jump further?
     }, options);
 
     return this.each(function() {        
 
       // Tooltip plugin code here
-      $(this).hover( 
-          function(ev) {
-              var $this = $(this),
-              pos = $this.offset(),
-              width = $this.width(),
-              // If we approach from the left move right otherwise move right
-              // There is a bit of fudge factor for positions between mouse x,y and offset left
-              adjustX = ev.pageX > pos.left + width / 2 ? -width : width;
-              height = $this.height(),
-              adjustY = ev.pageY > pos.top + height / 2 ? -height : height;
-              //console.log(ev.pageY + " : " + pos.top);
-              $('body').append($this);
-              
-              $this.css({ 'position': 'absolute', 'top': pos.top + adjustY, 'left': pos.left + adjustX});
-              // Maybe put a shim where it used to be of the same height?
-              //console.log($this.height());
-          },
-          function() {
+      $(this).mouseover( function(ev) {
+        var $this = $(this),
+        pos = $this.offset(),
+        width = $this.width(),
+        // If we approach from the left move right otherwise move right
+        // There is a bit of fudge factor for positions between mouse x,y and offset left
+        adjustX = ev.pageX > pos.left + width / 2 ? -width : width;
+        height = $this.height(),
+        // Move like the x but for top
+        adjustY = ev.pageY > pos.top + height / 2 ? -height : height;
+        $('body').append($this);
 
-          }
+        $this.css({ 'position': 'absolute', 'top': pos.top + adjustY, 'left': pos.left + adjustX});
+        // Maybe put a shim where it used to be of the same height?
+        // That would keep the page from moving around too much.
+        }
       );
     });
 
