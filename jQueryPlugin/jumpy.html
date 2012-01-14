@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css" media="screen">
+    div {
+        position: relative;
+    }
+  </style>
+</head>
+<body>
+<h2>Jumpy</h2>
+<label for="jump1">Hot potato</label><input type="checkbox" id="jump1" />
+<div>
+  <label for="jump2">Flea</label><input type="checkbox" id="jump2" />  
+</div>
+
+<script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="src/jumpy.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  // Use default options
+  $('label').jumpy();
+</script>
+</body>
+</html>
