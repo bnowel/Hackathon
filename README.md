@@ -26,7 +26,7 @@ Attendees for upcoming meeting:
  
 ###Sign In/Up:
  
-1. Go to <a href="http://c9.io/">c9.io</a>.
+1. Go to <a href="http://cloud9ide.com/">cloud9ide.com</a>.
  
 2. Click on the Octocat with the green background below the "sign me up" button.
  
