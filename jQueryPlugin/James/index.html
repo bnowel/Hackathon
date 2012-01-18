@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>graph</title>
+		<script type="application/javascript" src="http://code.jquery.com/jquery-1.6.1.min.js"> </script>
+		<script src="mygraph.js"></script>
+	</head>
+	<body>
+		<canvas id="Cgraph" width="300px" height="400px"></canvas>
+	</body>
+	
+	<script>
+		var test = new CanvasGraph("Cgraph");
+			test.spacing = "30";
+			test.barWidth = 25;
+			test.data = [30,40,50,70,80,90];
+			test.label = ['PHP','Joomla/Drupal','PhotoShop','Illustator','JavaScript','HTML/CSS'];
+			test.color = "#878813";
+			test.draw();
+	</script>
+</html>
