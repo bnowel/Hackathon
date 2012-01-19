@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css" media="screen">
+    .pt {
+        /*position:absolute;*/
+    }
+  </style>
+</head>
+<body>
+
+<div>
+<h1>EXTREME READING CHALLENGE HURRY THE FUCK UP</h1>
+
+<h1>Uuummmm, this is a tasty burger!</h1>
+<p id="blah">Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing. </p>
+
+<h1>Hold on to your butts</h1>
+<p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends. </p>
+
+<h1>Is she dead, yes or no?</h1>
+<p>Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends. </p>
+
+<h1>I gotta piss</h1>
+<p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing. </p>
+
+</div>
+
+<script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="src/particlize.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+var $pts;
+var tid;
+var pCount;
+var i = 0;
+
+function nuke() {
+    if (i == pCount) { clearInterval(tid); }
+    $pts.eq(i++).slideToggle();
+}
+
+$(function (){
+    //$pts = $("p:eq(0)").particlize();
+    $pts = $("h1, p").particlize();
+    pCount = $pts.size();
+    console.log(pCount);
+    
+    tid = setInterval("nuke()", 200);
+});
+</script>
+</body>
+</html>
