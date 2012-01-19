@@ -2,32 +2,30 @@
 <html>
 <head>
   <style type="text/css" media="screen">
-    html { background: #111;
-    }
-    h2 {
-        color: #999;        
-        text-align: center;
-    }
-    .shadow {
-        font-size: 148px;        
-        font-family: arial;
-        font-weight: bold;
-        padding: 200px 200px 200px 200px;
-        background: #eee;
-        float: left;
+    div {
+      height: 50px;
+      width: 50px;
+      border: 1px solid #555;
+      margin: 20px;
     }
   </style>
 </head>
 <body>
-<h2>shadowMe</h2>
+<h2>Color Me Bad</h2>
+(Not to be confused with <a href="http://www.youtube.com/watch?v=92NdfSeOLA0">Color Me Badd</a>)
 
-<div class='shadow'>Hello World</div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
 
 <script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
 <script src="src/example.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
   // Use default options
-  $('div.shadow').shadowMe();
+  $('div:odd').colorMeBad();
+  // Pass an option
+  $('div:even').colorMeBad({'bad': 'red'});
 </script>
 </body>
 </html>
