@@ -17,6 +17,7 @@ Attendees for upcoming meeting:
 1. [csibbach](/csibbach) 
 1. [acquire16](/acquire16)
 1. [reeceengle](/reeceengle)
+1. [amakusa](/amakusa)
 
 ------------------------------
 
