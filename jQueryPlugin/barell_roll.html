@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css" media="screen">
+    div {
+      height: 50px;
+      width: 50px;
+      border: 1px solid #555;
+      margin: 20px;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+<h2>Lets Do a Barrel Roll</h2>
+(Not to be confused with <a href="http://www.youtube.com/watch?v=92NdsSeOLA0">Upside Down Barrell Roll</a>)
+
+<div style="top: 250px; left: 158px; "></div>
+<div style="top: 200px; left: 158px; "></div>
+<div style="top: 150px; left: 158px; "></div>
+<div style="top: 100px; left: 158px; "></div>
+<div style="top: 50px; left: 158px; "></div>
+<div style="top: 0px; left: 158px; "></div>
+
+
+
+<script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="src/eddy_barrel_rollk.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+
+$(function()
+{
+    var $divs = $('div');
+    var keepDoingIt = true;
+    var counter = 0;
+    $('body').click(function() 
+    {
+        keepDoingIt = !keepDoingIt;
+    });
+    
+    var positionLeft = 0;
+    var positionTop = 0;
+    while(keepDoingIt && counter < 50)
+    {
+        
+        counter++;
+        $.each($divs, function()
+        {
+            var $this = $(this);
+            $this.slideUp(300).delay(800).slideDown(300);
+            var position = $this.position();
+            
+            positionTop = position.left + 1;
+            positionLeft = position.top + 1;
+            
+            console.log(" top: " + position.top);
+            console.log(" left: " + position.left);
+            
+            $this.animate({"top" : positionTop}, 500);
+            $this.animate({"left" : positionLeft}, 500);
+            $this.css("top", positionTop);
+            $this.css("left", positionLeft);
+        });
+    }
+});
+ 
+</script>
+</body>
+</html>

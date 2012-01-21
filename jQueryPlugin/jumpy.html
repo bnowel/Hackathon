@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css" media="screen">
+    div {
+        position: relative;
+    }
+  </style>
+</head>
+<body>
+<h2>Jumpy</h2>
+<label for="jump1">Hot potato</label><input type="checkbox" id="jump1" /> don't land on me
+<div>
+  <label for="jump2">Flea</label><input type="checkbox" id="jump2" />  
+</div>
+<p>
+  This is <span class="noShim">very</span> <span class="noShim">interesting</span>, relevant <span class="useShim">text</span> that should be read extensively.
+</p>
+<script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="src/jumpy.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  $('.useShim').jumpy();
+  $('input,.noShim').jumpy({ addShim : false });
+</script>
+</body>
+</html>

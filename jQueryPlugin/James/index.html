@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>graph</title>
+		<script type="application/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"> </script>
+		<script src="mygraph.js"></script>
+	</head>
+	<body>
+		<canvas id="Cgraph" width="600px" height="400px"></canvas>
+	</body>
+	
+	<script>
+    var mydata = [];
+    var mylabel = [];
+    $.ajax({
+        url: 'http://api.infochimps.com/geo/location/geonames/places/search?g.radius=1000&g.latitude=30.3&g.longitude=-97.75&f.q=park&apikey=api_test-W1cipwpcdu9Cbd9pmm8D4Cjc469',
+        type: 'get',
+        datatype: 'json',
+        success: function(response){
+          //  console.log(response);
+        //    console.log(response.results[0].name);
+          //  console.log(response.results[0].geo.elevation);
+            
+            for(t=0;t<response.total; t++)
+                { 
+                    mylabel[t] = response.results[t].name;
+                    //console.log(mylabel[t]);
+                    mydata[t] = response.results[t].geo.elevation/3;
+                    //console.log(mydata[t]);
+                }
+            $('#Cgraph').CanvasGraph({
+            'color': "orange",
+            'data' : mydata,
+            'label': mylabel//["PHP","Joomla/Drupal","PhotoShop","Illustator","JavaScript","HTML/CSS"]           
+            });
+        }
+        });
+        console.log(mydata);
+        
+	</script>
+</html>
