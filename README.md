@@ -19,6 +19,7 @@ Attendees for upcoming meeting:
 1. [reeceengle](/reeceengle)
 1. [amakusa](/amakusa)
 1. [wmeteo](/wmeteo)
+1. [mrvagabond](/mrvagabond)
 
 ------------------------------
 
