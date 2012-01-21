@@ -4,30 +4,34 @@
   <style type="text/css" media="screen">
     html { background: #111;
     }
+    html, body { margin: 0px; }
     h2 {
         color: #999;        
         text-align: center;
     }
     .shadow {
+        text-align: center;
         font-size: 148px;        
         font-family: arial;
         font-weight: bold;
-        padding: 200px 200px 200px 200px;
+        width:100%;
+        padding-top: 400px;
+        padding-bottom: 400px;
         background: #eee;
         float: left;
     }
   </style>
 </head>
 <body>
-<h2>shadowMe</h2>
+<!-- <h2>shadowMe</h2> -->
 
-<div class='shadow'>Hello World</div>
+<div class="shadow">Hello World</div>
 
 <script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
-<script src="src/example.js" type="text/javascript" charset="utf-8"></script>
+<script src="src/shadowMe.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
   // Use default options
-  $('div.shadow').shadowMe();
+  $('.shadow').shadowMe();
 </script>
 </body>
 </html>
