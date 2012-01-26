@@ -5,7 +5,7 @@ Attendees for upcoming meeting:
 
 1. [bnowel](/bnowel)
 1. [clintcparker](/clintcparker)
-1. [matt-holden](/matt-holden)
+1. [matt-holden](/matt-holden) matthew.e.holden @t gmail
 1. [hexate](/hexate)
 1. [ppershey](/ppershey)
 1. [ajbrann](/ajbrann)
