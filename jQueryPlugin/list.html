@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css" media="screen">
+  #list_container{
+      height: 600px;
+      width: 900px;
+      border: 1px solid #000;
+      }
+      
+    .listitem {
+        position: relative;
+        border: 2px solid #045903;
+        background-color: #CAFFC9;
+        padding: 5px;      
+        text-align: center;
+        width: 100px;
+        }
+  </style>
+</head>
+<body>
+<h2>Flying list</h2>
+
+<div id="list_container">
+    <div class="listitem">
+        one
+    </div>
+    <div class="listitem">
+        two
+    </div>
+    <div class="listitem">
+        ....
+    </div>
+    <div class="listitem">
+        trees
+    </div>
+</div>
+
+<script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="src/flying.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  // Use default options
+  $('#list_container').startFlying();
+</script>
+</body>
+</html>
