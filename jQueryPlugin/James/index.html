@@ -6,36 +6,42 @@
 		<script src="mygraph.js"></script>
 	</head>
 	<body>
-		<canvas id="Cgraph" width="600px" height="400px"></canvas>
+        <h3>james</h3>
+		<canvas id="Cgraph" width="10000px" height="500px"></canvas>
 	</body>
 	
 	<script>
     var mydata = [];
     var mylabel = [];
     $.ajax({
-        url: 'http://api.infochimps.com/geo/location/geonames/places/search?g.radius=1000&g.latitude=30.3&g.longitude=-97.75&f.q=park&apikey=api_test-W1cipwpcdu9Cbd9pmm8D4Cjc469',
+        url: 'http://api.infochimps.com/science/climatology/ncdc/weather_stations/search?apikey=JamesTbennett-Ye8koGeizOg7PL01OYQ_v4rLn69',
         type: 'get',
         datatype: 'json',
         success: function(response){
-          //  console.log(response);
-        //    console.log(response.results[0].name);
-          //  console.log(response.results[0].geo.elevation);
+            console.log(response);
+             console.log(response.results[0].name);
+           console.log(response.results[0].geo.elevation);
+            console.log(response.results.length);
             
-            for(t=0;t<response.total; t++)
+            for(var t=0;t<response.results.length; t++)
                 { 
                     mylabel[t] = response.results[t].name;
                     //console.log(mylabel[t]);
-                    mydata[t] = response.results[t].geo.elevation/3;
+                    mydata[t] = response.results[t].geo.elevation;
                     //console.log(mydata[t]);
                 }
+            
             $('#Cgraph').CanvasGraph({
-            'color': "orange",
-            'data' : mydata,
+            'graphType' : 'dot',
+            'color': "black",
+            'data' : mydata.sort(),
+            'spacing': 40,
+            'barWidth': 30,
             'label': mylabel//["PHP","Joomla/Drupal","PhotoShop","Illustator","JavaScript","HTML/CSS"]           
             });
         }
         });
-        console.log(mydata);
+       // console.log(mydata);
         
 	</script>
 </html>
