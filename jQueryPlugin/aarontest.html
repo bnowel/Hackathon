@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <style type="text/css" media="screen">
+    .square{
+      height: 50px;
+      width: 50px;
+      border: 1px solid #555;
+      margin: 20px;
+      background-color:black;
+    }
+    .page {
+    }
+    .circle {
+        height: 50px;
+        width: 50px;
+        border: 1px solid #555;
+        margin: 20px;
+        background-color:black;
+        
+        -moz-border-radius:25px;
+        -webkit-border-radius:25px;
+    }
+    .triangle {
+    width: 0;
+	height: 0;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-bottom: 40px;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+
+	border-bottom: 25px solid black;
+  </style>
+</head>
+<body>
+<button class="button1">I WANT ONLY BOXES</button>
+<button class="button2">I WANT ONLY CIRCLES</button>
+<button class="button3">I WANT ONLY TRIANGLES</button>
+<div class="page">
+<div class="square"></div>
+<div class="square"></div>
+<div class="square"></div>
+<div class="square"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="triangle"></div>
+<div class="triangle"></div>
+<div class="triangle"></div>
+<div class="triangle"></div>
+
+</div>
+<script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="src/aarontest.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  // Use default options
+    $(document).ready(function(){
+  $(".button1").click(function(){
+    $("h2").hide();
+    $("p").hide();
+    $(".circle").hide();
+    $(".square").show();
+    $(".triangle").hide();
+  });
+    $(".button2").click(function(){
+      $(".square").hide();
+      $(".circle").show();
+      $(".triangle").hide();
+  });
+    $(".button3").click(function(){
+      $(".square").hide();
+      $(".triangle").show();
+      $(".circle").hide();
+  });
+  
+  
+
+});
+
+
+</script>
+</body>
+</html>
