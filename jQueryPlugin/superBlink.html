@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css" media="screen">
+    div {
+      height: 100px;
+      width: 100px;
+      border: 1px solid #555;
+      margin: 20px;
+    }
+    
+    .circle {
+        height: 50px;
+        width: 50px;
+        
+        transform: perspective( 600 );
+        
+        -moz-border-radius:25px;
+        -webkit-border-radius:25px;
+    }
+    
+    #container {
+        display: table;
+        border: none;
+    }
+    
+    .row {
+        display: table-row;
+        border: none;
+    }
+    
+    .column {
+        display: table-cell;
+        border: none;
+    }    
+  </style>
+</head>
+<body>
+
+<div id="container">
+    <div class="row">
+        <div class="column">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="column">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="column">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+        <div class="column">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+</div>
+
+<script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="src/superBlink.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  // Use default options
+  $('.circle').superBlink();
+</script>
+</body>
+</html>
