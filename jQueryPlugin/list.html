@@ -2,15 +2,31 @@
 <html>
 <head>
   <style type="text/css" media="screen">
+  #container {
+    width: 1050px;  
+  }
+  #left_scroll {
+      width: 50px;
+          cursor: pointer;
+    float: left;
+    }
+    #right_scroll {
+      width: 50px;
+          cursor: pointer;
+    float: right;
+    }
   #list_container{
-      height: 600px;
+      float: left;
+      height: 200px;
       width: 900px;
       border: 1px solid #000;
       }
       
     .listitem {
+        box-shadow: 10px 10px 5px #888;
+        display: inline;
         position: relative;
-        border: 2px solid #045903;
+        border: 2px solid #054l903;
         background-color: #CAFFC9;
         padding: 5px;      
         text-align: center;
@@ -20,22 +36,21 @@
 </head>
 <body>
 <h2>Flying list</h2>
-
-<div id="list_container">
-    <div class="listitem">
-        one
+<div id="container">
+    <div id="left_scroll">
+        < 
     </div>
-    <div class="listitem">
-        two
+    <div id="list_container">
+        <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+        <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+        <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+        <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+        <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
     </div>
-    <div class="listitem">
-        ....
-    </div>
-    <div class="listitem">
-        trees
+    <div id="right_scroll">
+        >
     </div>
 </div>
-
 <script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
 <script src="src/flying.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
