@@ -1,92 +1,14 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <script src="lib/jquery-1.7.1.js"></script>
-	<script src="src/smashBang.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#GO button").click(function(){
-                console.log("foo");
-                $.smashBang();
-                $(this).hide();
-            });            
-        });
-
-    </script>
+    <script src="lib/jquery-1.7.1.js" type="text/javascript"></script>
+    <script type="text/javascript" src="src/smashBang.js"/>
+    <script>
     
-    <style type="text/css">
-        body{width:1200px;}
-        #instructions{float:left; width:800px;}
-        #GO button{ font-size: 24px; }
-        span{display:block;}
-    </style>
+    </script>
 </head>
 
 <body>
-    <h2>Smash Bang Fusion!!</h2>
-    
-    <div id="instructions">
-    <div>Paste the this (smashBang.js) in the console on any web page. Then execute $.smashBang()</div>
-    <pre>
-(function(){
-    
-    var randomOffset = function(base){
-        return Math.random() * base;
-    };
-    
-    function getRandomColor() {
-        var letters = '0123456789ABCDEF'.split('');
-        var color = '#';
-        for (var i = 0; i < 6; i++ ) {
-            color += letters[Math.round(Math.random() * 15)];
-        }
-        return color;
-    }
-    
-    var oneInThree = function(){
-        return Math.floor((Math.random()*100))%3 === 0;
-    };
-    
-    $.smashBang = function(){
-        $(window).delegate("*", 'mouseover', function(event){
-            if ($(this).is(':not("body,html")'))
-            $(this).smashBang();   
-            event.stopPropagation();
-        });    
-                    
-        setInterval(function(){
-            var $divs = $("div");
-            var rand = Math.random()*$divs.length;
-            $divs.eq([rand]).trigger("mouseover");
-        }, 10);
-    };
-    
-    $.fn.smashBang = function(){
-
-        return this.each(function(){  
-            var $this = $(this);
-            var winWidth = $(window).width();
-            var winHeight = $(window).height();
-            
-            var newCSS = {
-                position:'absolute',
-                top: Math.max(winHeight - randomOffset(winHeight) - $(this).height(), 0) + 'px',
-                left: Math.max(winWidth - randomOffset(winWidth) - $(this).width(), 0) + 'px',
-                opacity: (Math.random() + 0.5).toString()
-            };
-            
-            if (oneInThree())
-                $.extend(newCSS, {'background-color': getRandomColor() });
-            if (oneInThree())
-                $.extend(newCSS, {'color': getRandomColor() });
-            
-            $this.css(newCSS);
-        });
-    };    
-})();
-    </pre>
-    </div>
     
     <div id="GO">
         <button>TRY IT!<br/><br />...calls $.smashBang();</button>
@@ -120,6 +42,86 @@
     <span>I'm pretty sure there's a lot more to life than being really, really, ridiculously good looking. And I plan on finding out what that is.</span>
     <span>I'm not an ambi-turner. </span>
     
+<body>
+    <div>smang</div>
+    <div>smang</div>
+    <div style="background-color:red">
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+    </div>
+    <div>smang</div>
+    <div>smang</div>
+    <div>smang</div>
+    <div style="background-color:red">
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+    </div>
+    <div>smang</div>
+    <div style="background-color:red">smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+    </div>
+    <div>smang</div>
+    <div>smang</div>
+    <div>smang</div>
+    <div>smang</div>
+    <div style="background-color:blue">
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+    </div>
+    <div>smang</div>
+    <div>smang</div>
+    <div style="background-color:purple">
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+        <div>smang</div>
+    </div>
+    <div>smang</div>
+    <div>smang</div>
+    <div>smang</div>
+    <div>smang</div>
+    <div>smang</div>
+
 </body>
 </html>
 

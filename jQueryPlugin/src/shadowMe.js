@@ -37,8 +37,8 @@
         var distance = Math.abs(shadowX) + Math.abs(shadowY);
         //$(this).html(x +', '+ y);
 
-        var blur = 2 + (distance * .1);
-        var alpha = .8 - (distance * .0005);
+        var blur = 2 + (distance * .15);
+        var alpha = .65 - (distance * .0005);
             
         $(this).css( 'text-shadow', ' ' + shadowX + 'px ' + shadowY + 'px ' + blur + 'px rgba(0,0,0,' + alpha + ') ' );
         
