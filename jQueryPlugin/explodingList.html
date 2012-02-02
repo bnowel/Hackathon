@@ -1,7 +1,7 @@
 <html>
 <head>
     <link href='http://fonts.googleapis.com/css?family=Nunito:400,700' rel='stylesheet' type='text/css'>
-    <link type="text/css" rel="stylesheet" href="listStyles.css" />
+    <link type="text/css" rel="stylesheet" href="css/listStyles.css" />
     <script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
     <script src="src/explodingList.js" type="text/javascript" charset="utf-8"></script>
 </head>
@@ -62,5 +62,15 @@
         </li>
     </ul>
 </div>
+<script type="text/javascript" charset="utf-8">
+  // Use headers to toggle presence of lower level lists
+  console.log("Adding plugin");
+  $('.apiServiceHeader').showHideChildren();
+  $('.apiService').toggleAble();
+  $('.apiMethodHeader').showHideChildren();
+  $('.apiMethod').toggleAble(); 
+  // items of this class show "selectedness" 
+  $('.argument').toggleAble();
+</script>
 </body>
 </html>

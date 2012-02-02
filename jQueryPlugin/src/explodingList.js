@@ -1,19 +1,27 @@
-onload=function(){
-    $(".apiServiceHeader").live("click", function(){
-            showOrHideChildren($(this), "apiMethodList");
-        });
-             
-    $(".apiMethodHeader").live("click", function(){
-            showOrHideChildren($(this), "apiArgumentList");
+(function( $ ){
+
+    $.fn.toggleAble = function(  ) { 
+        $(this).live("click",function(){ 
+                    $(this).toggleClass("selected");
+                    console.log("was toggled");
         });
         
-    $(".argument").live("click",function(){
-        $(this).toggleClass("selectedArg");
-        console.log("toggled");
-    });
-};
+        console.log("added toggling"); 
+    };
 
-function showOrHideChildren(id, targetClass){
-    console.log("Showing this: " + id);
-    id.parent().children("." + targetClass).toggleClass('hidden');
+    $.fn.showHideChildren = function ( ) {
+        console.log("setting up showHide");
+        $(this).live("click", function(){
+                            showOrHideChildren($(this));
+                            }
+            );
+    };
+
+
+
+function showOrHideChildren(id){
+    console.log("Hideshowing "+id);
+    id.parent().children("ul").toggleClass('hidden');
 }
+
+})( jQuery );
