@@ -1,13 +1,11 @@
-// This is a great place to start a simple plugin.
-// Check http://docs.jquery.com/Plugins/Authoring for additional tips for plugins
-
 (function( $ ){
 
-  $.fn.particlize = function( options ) {  
+  $.fn.particlize = function( options ) {
     // Create some defaults, extending them with any options that were provided
     var settings = $.extend( {
         addShim : true,
-        byWord : true
+        byWord : true,
+        unit : "word"
     }, options);
     
     // Only calculate things once that won't change
@@ -15,7 +13,9 @@
         return {
             'width' : $elem.width(),
             'height' : $elem.height(),
-            'hasJumped' : false
+            'hasJumped' : false,
+            'ox' : 0,
+            'oy' : 0
         };
     }
     
@@ -38,12 +38,33 @@
         var $this = $(this),
         deets = $this.data( 'particlize' ) || getDeets( $this );
         
-        var words = $this.text().split(' ');
+        var ps = Array();
+        var pBlob = "";
         
-        var wordsBlob = "";
-        for (var i = 0; i < words.length; i++)
+        if (settings.unit == "word")
         {
-            wordsBlob += "<span class='pt'>" + words[i] + "</span> ";
+        	ps = $this.text().split(' ');
+        	
+        	for (var i = 0; i < ps.length; i++)
+	        {
+	            pBlob += "<span class='pt'>" + ps[i] + "</span> ";
+	        }
+        }
+        else if (settings.unit == "char")
+        {
+        	ps = $this.text();
+        	
+        	for (var i = 0; i < ps.length; i++)
+	        {
+	        	if (ps[i] != ' ')
+	        	{
+	            	pBlob += "<span class='pt'>" + ps[i] + "</span>";
+	            }
+	            else
+	            {
+	            	pBlob += " ";
+	            }
+	        }
         }
         
         var $shim = $this.clone().removeAttr( 'id name' );
@@ -60,12 +81,15 @@
         }
         
         // put the wrapped spans back into the original container
-        $this.html(wordsBlob);
+        $this.html(pBlob);
         
         // iterate in reverse order to maintain correct span positions
         $($(".pt", $this).get().reverse()).each(function (i, el) {
             var $pt = $(el);
             var pp = $pt.offset();
+            
+            // store original position
+            $pt.data({"ox" : pp.left, "oy" : pp.top});
             
             // absolutely position each word
             $pt.css({ 'position': 'absolute', 'top': pp.top, 'left': pp.left });
@@ -85,5 +109,43 @@
     });
     
     return $elems;
+  };
+  
+  // create a wave effect with the letters in the selected objects
+  $.fn.wave = function( options ) {
+    // Create some defaults, extending them with any options that were provided
+    var settings = $.extend( {
+        unit : "word",
+        cycleTime : 2000, // total cycle time
+        dist : 4, // total sway distance in px
+        steps : 20 // stagger time
+    }, options);
+    
+    var $pts;
+  	var tid;
+    var staggerTime = settings.cycleTime / settings.steps; // stagger steps
+	var halfSway = settings.dist / 2; // half dat
+    
+	function tick() {
+		var ms = (new Date()).getTime(); // clock time
+		
+		for (var i = 0; i < $pts.length; i++)
+		{
+			// animation t
+			var t = (ms + ((i % settings.steps) * staggerTime)) % settings.cycleTime;
+			var yi = $($pts[i]).data("oy");
+			
+			// calc yf
+			//var yf = (yi + (swayDist * (t / cycleTime)) - halfSway); // linear cycling fall
+			var yf = (yi + (settings.dist * Math.sin((t / settings.cycleTime) * 2 * Math.PI)) - halfSway); // sine wave baby
+			
+			$pts[i].style.top = yf+"px";
+		}
+	}
+    
+    $pts = $(this).particlize({unit:settings.unit});
+    tid = setInterval(tick, 100);
+    
+    return $pts;
   };
 })( jQuery );
