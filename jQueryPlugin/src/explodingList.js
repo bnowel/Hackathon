@@ -1,42 +1,27 @@
 (function( $ ){
-    
-    $.fn.toggleAble = function(  ) { 
-        $(this).toggleClass("selected");
-        console.log("toggled"); 
 
+    $.fn.toggleAble = function(  ) { 
+        $(this).live("click",function(){ 
+                    $(this).toggleClass("selected");
+                    console.log("was toggled");
+        });
+        
+        console.log("added toggling"); 
     };
-      
+
     $.fn.showHideChildren = function ( ) {
+        console.log("setting up showHide");
         $(this).live("click", function(){
-                            showOrHideChildren($(this), "apiMethodList");
+                            showOrHideChildren($(this));
                             }
             );
     };
 
 
-function hi(){
-    $(".apiServiceHeader").live("click", function(){
-            showOrHideChildren($(this), "apiMethodList");
-        });
-             
-    $(".apiMethodHeader").live("click", function(){
-            showOrHideChildren($(this), "apiArgumentList");
-        });
-        
-    $(".argument").live("click",function(){
-        $(this).toggleClass("selectedArg");
-        console.log("toggled");
-    });
-};
-/*  disabled 
-function showOrHideChildren(id, targetClass){
-    console.log("Showing this: " + id);
-    id.parent().children("." + targetClass).toggleClass('hidden');
-}*/
 
 function showOrHideChildren(id){
     console.log("Hideshowing "+id);
-    id.parent().children().toggleCLass('hidden');
+    id.parent().children("ul").toggleClass('hidden');
 }
 
 })( jQuery );
