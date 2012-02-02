@@ -3,22 +3,27 @@
 <head>
   <style type="text/css" media="screen">
   #container {
-    width: 1050px;  
+    width: 700px;  
   }
   #left_scroll {
+      font-size: 4em;
+      vertical-align: middle;
       width: 50px;
           cursor: pointer;
     float: left;
     }
     #right_scroll {
+      font-size: 4em;
+      vertical-align: middle;
       width: 50px;
           cursor: pointer;
     float: right;
     }
-  #list_container{
+  #scroller{
+      overflow: hidden;
       float: left;
-      height: 200px;
-      width: 900px;
+      height: 100px;
+      width: 575px;
       border: 1px solid #000;
       }
       
@@ -28,7 +33,6 @@
         position: relative;
         border: 2px solid #054l903;
         background-color: #CAFFC9;
-        padding: 5px;      
         text-align: center;
         width: 100px;
         }
@@ -40,16 +44,31 @@
     <div id="left_scroll">
         < 
     </div>
-    <div id="list_container">
-        <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
-        <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
-        <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
-        <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
-        <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+    <div id="scroller">
+        <div id="list_container" style="width: 1000px">
+            <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+            <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+            <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+            <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+            <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+            <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+            <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+            <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+            <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+            <img class="listitem" src="http://upload.wikimedia.org/wikipedia/commons/3/3e/Tree-256x256.png" />
+        </div>
     </div>
     <div id="right_scroll">
         >
     </div>
+</div>
+<div id="container2">
+  <a id="item1" class="mainItem" href="">Item 1</a>
+  <div id="item1-subDiv">
+    <ul>
+        <li> (4 Args) - ScheduleType, ....</li>
+    </ul>
+  </div>
 </div>
 <script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
 <script src="src/flying.js" type="text/javascript" charset="utf-8"></script>
