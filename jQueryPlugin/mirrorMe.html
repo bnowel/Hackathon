@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+    .cloneText {
+        -webkit-transform:scaleX(-1);
+        -moz-transform:scaleX(-1);        
+    }
+    #unoMe {
+        display: inline-block;
+        padding-right: 10px;
+        cursor:hand;
+        border: 3px solid #48CCCD;
+        height: 150px;
+        width: 150px;
+    }
+    p.cloneText{
+        word-wrap: break-word;
+        padding-right: 10px;
+
+    }
+    .mirror{
+        height: 160px;
+        overflow : hidden;
+        width: 160px;
+        display: inline-block;
+        border: 3px solid #48CCCD;
+        background:#dddddd;
+        -moz-border-radius: 35px;
+        border-radius: 35px;
+    }
+   /* #animateMe{        
+        -moz-transition: background-color 20s;
+        }*/
+     #animateMe {  
+    -moz-animation-duration: 3s; 
+    /*-moz-animation-direction: alternate;*/
+    display: inline-block;
+    -moz-animation-name: flipIn; 
+    font: italic 12px cursive;
+  }  
+    
+  @-moz-keyframes flipIn {  
+    from {  
+    -moz-transform:scaleX(1)    
+    }  
+      
+    to {  
+      -moz-transform:scaleX(-1)  
+    }  
+  }      
+        
+        
+        
+  </style>
+</head>
+<body>
+<h2>Mirror mirror,can you see me ? </h2>
+
+
+<textarea id="unoMe"> </textarea>
+
+<div class="mirror">
+<p id="clonedText"> </p>
+</div>
+
+<div id="animateMe">
+    WooHoo!!!
+</div>
+<script src="lib/jquery-1.7.1.js" type="text/javascript" charset="utf-8"></script>
+<script src="src/mirrorMe.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+  // Use default options
+   $('#unoMe').mirrorMe();
+  // $('#animateMe').css("-moz-transform", "scaleX(-1)");    
+</script>
+</body>
+</html>
