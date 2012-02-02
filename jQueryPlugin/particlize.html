@@ -41,11 +41,14 @@ function nuke() {
 
 $(function (){
     //$pts = $("p:eq(0)").particlize();
-    $pts = $("h1, p").particlize();
+    //$pts = $("h1, p").particlize({unit:"word"});
+    
+    //$pts = $("p:eq(1)").particlize({unit:"char"});
+    $pts = $("p:eq(1)").wave({unit:"char"});
     pCount = $pts.size();
     console.log(pCount);
     
-    tid = setInterval("nuke()", 200);
+    //tid = setInterval("nuke()", 200);
 });
 </script>
 </body>
