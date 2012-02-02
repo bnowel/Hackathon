@@ -1,0 +1,91 @@
+ul, li {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+.container {
+    margin-left: 50px;
+    margin-right: 50px;
+    border: 2px solid black;
+    padding: 20px;
+}
+
+.apiService {
+    margin-left: 5px;
+}
+
+.apiServiceHeader {
+    background-color: #ddd;
+    border: 1px solid #999;
+    padding: 5px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.apiServiceHeader:hover {
+    background-color: #eee;
+}
+
+.apiMethod {
+    margin-left: 20px;
+}
+
+.apiMethodHeader {
+    background-color: #aaa;
+    border: 1px solid #999;
+    padding: 5px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.apiMethodHeader:hover {
+    background-color: #ccc;
+}
+
+.apiArgumentList {
+    margin-left: 20px;
+}
+
+.argument {
+    padding: 5px;
+    margin-left: 20px;
+    border: 1px solid #000;    
+    cursor: pointer;
+}
+
+.argument:hover {
+    background-color: #eee;    
+}
+
+.selected {
+    margin-left: 0px;
+}
+
+.numArgs {
+    color: #888; 
+}
+
+.numArgs:before {
+    content: "[ ";
+}
+
+.numArgs:after {
+    content: " ]";
+}
